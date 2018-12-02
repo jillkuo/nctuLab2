@@ -30,8 +30,10 @@ In this lab, we are going to write a Python program which can generate a network
 > ./topology.py  
    
 來執行topology.py。 
+接下來就會進入CLI mode。  
+然後輸入iPerf command進行測量。  
 
-![alt text](https://github.com/nctucn/lab2-jillkuo/blob/master/iPerf.png)
+![alt text](https://github.com/nctucn/lab2-jillkuo/blob/master/iPerf.png)  
 
 ---
 ## Description
@@ -39,7 +41,27 @@ In this lab, we are going to write a Python program which can generate a network
 ### Mininet API in Python
 
 > TODO:
-> * Describe the meaning of Mininet API in Python you used in detail
+> * Describe the meaning of Mininet API in Python you used in detail  
+
+**Topo** is base class for Mininet topologies.  
+1. **addSwitch('name_of_the_Switch')**  
+   在topology中增加Switch，命名為name_of_the_Switch。  
+2. **addHost('name_of_the_Host')**  
+   在topology中增加Host，並命名為name_of_the_Host。  
+3. **addLink(data_of_the_Link)**  
+   在topology中增加Link，並且說明它分別連接哪兩個Switch或Host，bandwidth是多少，time delay 多少ms，以及loss rate。  
+4. **start()**
+   啟動network。  
+5. **dumpNodeConnections(net.hosts)**  
+   dumps connections from a set of hosts  
+6. **dumpNodeConnections(net.switches)**  
+   dumps connections from a set of switches  
+7. **CLI(net)**  
+   開啟CLI mode  
+8. **Mininet**  
+   用來管理network的main class  
+9. **setLogLevel('info')**  
+   default output，'info' 是指network的一些基本資訊。
 
 ### iPerf Commands
 
