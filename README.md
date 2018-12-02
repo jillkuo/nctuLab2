@@ -49,8 +49,8 @@ In this lab, we are going to write a Python program which can generate a network
 2. **addHost('name_of_the_Host')**  
    在topology中增加Host，並命名為name_of_the_Host。  
 3. **addLink(data_of_the_Link)**  
-   在topology中增加Link，並且說明它分別連接哪兩個Switch或Host，bandwidth是多少，time delay 多少ms，以及loss rate。  
-4. **start()**
+   在topology中增加Link，並且說明它分別連接哪兩個Switch或Host，bandwidth是多少，time delay是多少ms，以及loss rate。  
+4. **start()**  
    啟動network。  
 5. **dumpNodeConnections(net.hosts)**  
    dumps connections from a set of hosts  
@@ -66,7 +66,14 @@ In this lab, we are going to write a Python program which can generate a network
 ### iPerf Commands
 
 > TODO:
-> * Describe the meaning of iPerf command you used in detail
+> * Describe the meaning of iPerf command you used in detail  
+
+執行topology.py後，會進入到CLI mode。  
+接著輸入:  
+> h6 iperf -s -u -i 1 > ./out/result &  
+將名為h6的Host訂為傳出端Server(-s)，使用UDP協定(-u)，每經過一秒都顯示一筆數據(-i 1)，然後把結果輸出到./out/result  
+> h3 iperf -c 10.0.0.6 -u -i 1  
+將名為h3的Host訂為接收端Client(-c)，其server的IP為10.0.0.6，使用UDP協定(-u)，每經過一秒都顯示一筆數據(-i 1)  
 
 ### Tasks
 
