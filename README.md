@@ -31,7 +31,7 @@ In this lab, we are going to write a Python program which can generate a network
    
 來執行topology.py。 
 
-![alt](https://screenshot.net/tw/3mxnmfw)
+![alt text](https://imgur.com/P7dLXvp)
 
 ---
 ## Description
