@@ -85,7 +85,7 @@ In this lab, we are going to write a Python program which can generate a network
 > TODO:
 > * Describe how you finish this work step-by-step in detail
 
-1. **Environment Setup**
+1. **Environment Setup**  
    打開PieTTY連接到學校的系統140.113.195.69且port為10025，進入到屬於自己的container中，並且login。  
    在container中輸入:  
    > git clone https://github.com/nctucn/lab2-jillkuo.git  
@@ -100,7 +100,7 @@ In this lab, we are going to write a Python program which can generate a network
    
    來開啟Open vSwitch的service。  
 
-2. **Example of Mininet**
+2. **Example of Mininet**  
    接著來試跑一下下載的檔案中所提供的sample code(example.py)。  
    首先先進入example.py所在的資料夾，輸入:  
    > cd /root/lab2-jillkuo/src/  
@@ -120,7 +120,7 @@ In this lab, we are going to write a Python program which can generate a network
    
    即可。  
 
-3. **Topology Generator**
+3. **Topology Generator**  
    首先要先創建或編輯topology.py，輸入:  
    > vim topology.py  
    
@@ -139,7 +139,7 @@ In this lab, we are going to write a Python program which can generate a network
    即可。
    這個時候因為在topology.py加入了CLI(net)，所以會進入到CLI mode。  
 
-4. **Measurement**
+4. **Measurement**  
    這次我所做的是topology2，所以我在進入到CLI mode後要進行量測的是在h6與h3之間傳封包的實驗。  
    因此輸入:  
    > h6 iperf -s -u -i 1 > ./out/result &  
@@ -196,7 +196,7 @@ In this lab, we are going to write a Python program which can generate a network
 > TODO:
 > * Please replace "YOUR_NAME" and "YOUR_GITHUB_LINK" into yours
 
-* [YOUR_NAME](YOUR_GITHUB_LINK)
+* [Jill Kuo](https://github.com/jillkuo)
 * [David Lu](https://github.com/yungshenglu)
 
 ---
