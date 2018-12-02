@@ -19,6 +19,12 @@ In this lab, we are going to write a Python program which can generate a network
 > TODO: 
 > * Describe how to execute your program
 > * Show the screenshot of using iPerf command in Mininet
+編輯完Python code後，回到終端機下達指令:
+> chmod +x topology.py
+意思是使用chmod(用於控制用戶對檔案的權限的命令)，增加對檔案執行的權限(+x)，這個檔案叫做topology.py。
+接著輸入指令:
+> ./topology.py
+來執行topology.py。
 
 ---
 ## Description
