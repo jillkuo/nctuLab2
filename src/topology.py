@@ -1,6 +1,8 @@
 #!/usr/bin/python 
 
-# this code is written by EECS 0610025 JILL KUO
+#the first line is necessary to run this code as a standalone executable
+
+#This code is written by EECS 0610025 JILL KUO
 
 from mininet.net import Mininet
 from mininet.topo import Topo
@@ -12,11 +14,13 @@ from mininet.cli import CLI
 
 class StructureOfTopo2(Topo):
 	def build(self, n = 10):
+		#add the Switches
 		switch1 = self.addSwitch('s1')
 		switch2 = self.addSwitch('s2')
 		switch3 = self.addSwitch('s3')
 		switch4 = self.addSwitch('s4')
 		switch5 = self.addSwitch('s5')
+		#add the Hosts
 		host1 = self.addHost('h1')
 		host2 = self.addHost('h2')
 		host3 = self.addHost('h3')
@@ -27,6 +31,7 @@ class StructureOfTopo2(Topo):
 		host8 = self.addHost('h8')
 		host9 = self.addHost('h9')
 		host10 = self.addHost('h10')
+		#add the Links and set the property
 		self.addLink(
                 host9, 
                 switch4, 
@@ -115,17 +120,20 @@ class StructureOfTopo2(Topo):
 def run_the_topo2():
 	#create
 	topo = StructureOfTopo2(n = 10)
+	#set the type of topo, controller ,and link
 	net = Mininet(
         topo = topo, 
         controller = OVSController,
         link = TCLink)
+	#start the net
 	net.start()
-#	net.pingAll()
+	#net.pingAll()
+	#dump every hosts' and switches' connection
 	dumpNodeConnections(net.hosts)
 	dumpNodeConnections(net.switches)
+	#enter in Mininet CLI mode
 	CLI(net)
 
 if __name__ == '__main__':
 	setLogLevel('info')
 	run_the_topo2()
-	run_the_topo 
