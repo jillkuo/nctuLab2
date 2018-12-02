@@ -29,7 +29,9 @@ In this lab, we are going to write a Python program which can generate a network
    
 > ./topology.py  
    
-來執行topology.py。  
+來執行topology.py。 
+
+![Alt text](https://screenshot.net/tw/3mxnmfw)
 
 ---
 ## Description
