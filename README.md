@@ -70,9 +70,14 @@ In this lab, we are going to write a Python program which can generate a network
 
 執行topology.py後，會進入到CLI mode。  
 接著輸入:  
+
 > h6 iperf -s -u -i 1 > ./out/result &  
+
 將名為h6的Host訂為傳出端Server(-s)，使用UDP協定(-u)，每經過一秒都顯示一筆數據(-i 1)，然後把結果輸出到./out/result  
+接著輸入:  
+
 > h3 iperf -c 10.0.0.6 -u -i 1  
+
 將名為h3的Host訂為接收端Client(-c)，其server的IP為10.0.0.6，使用UDP協定(-u)，每經過一秒都顯示一筆數據(-i 1)  
 
 ### Tasks
@@ -81,21 +86,90 @@ In this lab, we are going to write a Python program which can generate a network
 > * Describe how you finish this work step-by-step in detail
 
 1. **Environment Setup**
-
+   打開PieTTY連接到學校的系統140.113.195.69且port為10025，進入到屬於自己的container中，並且login。  
+   在container中輸入:  
+   > git clone https://github.com/nctucn/lab2-jillkuo.git  
+   
+   取的這次lab所需要的檔案。  
+   接著嘗試輸入:  
+   > mn  
+   
+   試跑一下Mininet。  
+   若出現Error，則輸入:  
+   > service openvswitch-switch start  
+   
+   來開啟Open vSwitch的service。  
 
 2. **Example of Mininet**
-
+   接著來試跑一下下載的檔案中所提供的sample code(example.py)。  
+   首先先進入example.py所在的資料夾，輸入:  
+   > cd /root/lab2-jillkuo/src/  
+   
+   然後增加執行的權限，輸入:  
+   > chmod +x example.py  
+   
+   接著執行程式，輸入:  
+   > ./example.py
+   
+   就會看到結果。  
+   若是出現Error，則輸入:  
+   > mn -c  
+   
+   再次輸入:  
+   > ./example.py  
+   
+   即可。  
 
 3. **Topology Generator**
-
+   首先要先創建或編輯topology.py，輸入:  
+   > vim topology.py  
+   
+   進入檔案後，按i做編輯，按ESC離開編輯模式，輸入:wq離開檔案，回到終端機。  
+   詳細的內容解釋都在topology.py裡的註解中。  
+   接著要執行topology.py，輸入:  
+   > chmod +x topology.py  
+   > ./topology.py  
+   
+   若出現Error，則一樣輸入:  
+   > mn -c  
+   
+   再次輸入:  
+   > ./topology.py  
+   
+   即可。
+   這個時候因為在topology.py加入了CLI(net)，所以會進入到CLI mode。  
 
 4. **Measurement**
+   這次我所做的是topology2，所以我在進入到CLI mode後要進行量測的是在h6與h3之間傳封包的實驗。  
+   因此輸入:  
+   > h6 iperf -s -u -i 1 > ./out/result &  
+   
+   接著輸入:  
+   > h3 iperf -c 10.0.0.6 -u -i 1  
+   
+   就會得到結果，其中在packet loss的數據中，其理論值為13% ~ 18%，但是其中有一次我的測量結果為23%，大於理論值，但僅此一次，推測是機率造成的問題。  
+   若要離開CLI mode回到終端機，則輸入:  
+   > exit  
+   
+   接下來必須將檔案push到Github，因此在終端機中來到要push的資料夾，輸入:  
+   > git add .  
+   > git commit -m "COMMIT MESSAGE"  
+   > git push origin master  
+   
+   來完成動作。  
 
 ---
 ## References
 
 > TODO: 
 > * Please add your references in the following
+
+* **參考資料**  
+    * [Introduction to Mininet](https://github.com/mininet/mininet/wiki/Introduction-to-Mininet)  
+    * [README](https://github.com/guodongxiaren/README)  
+    * [chmod](https://en.wikipedia.org/wiki/Chmod)  
+    * [利用 iperf 測試網路效能](https://cms.35g.tw/coding/%E5%88%A9%E7%94%A8-iperf-%E6%B8%AC%E8%A9%A6%E7%B6%B2%E8%B7%AF%E6%95%88%E8%83%BD/)  
+    * [Python error: command not found](https://stackoverflow.com/questions/30285154/python-error-command-not-found)  
 
 * **Mininet**
     * [Mininet Walkthrough](http://mininet.org/walkthrough/)
