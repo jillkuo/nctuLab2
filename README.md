@@ -20,6 +20,8 @@ In this lab, we are going to write a Python program which can generate a network
 > * Describe how to execute your program
 > * Show the screenshot of using iPerf command in Mininet  
    
+topo2.png
+![alt text](https://github.com/nctucn/lab2-jillkuo/blob/master/src/topo/topo2.png)
 編輯完Python code後，回到終端機下達指令: 
    
 > chmod +x topology.py  
