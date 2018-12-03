@@ -73,12 +73,12 @@ In this lab, we are going to write a Python program which can generate a network
 
 > h6 iperf -s -u -i 1 > ./out/result &  
 
-將名為h6的Host訂為傳出端Server(-s)，使用UDP協定(-u)，每經過一秒都顯示一筆數據(-i 1)，然後把結果輸出到./out/result  
+將名為h6的Host訂為Server(-s)，使用UDP協定(-u)，每經過一秒都顯示一筆數據(-i 1)，然後把結果輸出到./out/result  
 接著輸入:  
 
 > h3 iperf -c 10.0.0.6 -u -i 1  
 
-將名為h3的Host訂為接收端Client(-c)，其server的IP為10.0.0.6，使用UDP協定(-u)，每經過一秒都顯示一筆數據(-i 1)  
+將名為h3的Host訂為Client(-c)，其server的IP為10.0.0.6，使用UDP協定(-u)，每經過一秒都顯示一筆數據(-i 1)  
 
 ### Tasks
 
